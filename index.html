@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIプログラミング学習コミュニティ</title>
+    <style>
+        :root {
+            --primary-color: #1E5631; /* Dark Green */
+            --secondary-color: #4CAF50; /* Green */
+            --background-color: #f0f4f0; /* Lighter green-tinted background */
+            --text-color: #333333;
+            --white-color: #ffffff;
+        }
+        body {
+            font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .header-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            font-weight: 700;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+            padding: 15px 35px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 30px;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .cta-button:hover {
+            background-color: #45a049; /* Darker Green */
+            transform: translateY(-3px);
+        }
+        section {
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 1px solid #dce0dc;
+        }
+        section:last-of-type {
+            border-bottom: none;
+        }
+        h2 {
+            font-size: 2.2em;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .feature-item {
+            background-color: var(--white-color);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            width: calc(33.333% - 40px);
+            min-width: 220px;
+            box-sizing: border-box;
+        }
+        .feature-item h3 {
+            font-size: 1.4em;
+            color: var(--secondary-color);
+            margin-top: 0;
+        }
+        .recommend-list {
+            list-style: none;
+            padding: 0;
+            display: inline-block;
+            text-align: left;
+        }
+        .recommend-list li {
+            background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%234CAF50"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>') no-repeat left center;
+            background-size: 24px;
+            padding-left: 35px;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+            .feature-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <img src="header-image.jpg" alt="AI Community" class="header-image">
+            <h1>AI開発の仲間と、次のレベルへ。</h1>
+            <p>初心者から経験者まで歓迎。AIプログラミングを共に学ぶ、実践的コミュニティ。</p>
+            <!-- ↓↓↓ Discordの招待リンクをここに設定してください ↓↓↓ -->
+            <a href="https://discord.gg/.ccuv6rnfpe" class="cta-button">Discordでコミュニティに参加</a>
+            <!-- ↑↑↑ Discordの招待リンクをここに設定してください ↑↑↑ -->
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <div class="container">
+                <h2>このコミュニティで学べること</h2>
+                <p>最新のAI技術トレンドから、実践的なプログラミングスキルまで。仲間と共に学び、成長できる環境がここにあります。</p>
+                <div class="features">
+                    <div class="feature-item"><h3>Python基礎</h3></div>
+                    <div class="feature-item"><h3>機械学習</h3></div>
+                    <div class="feature-item"><h3>ディープラーニング</h3></div>
+                    <div class="feature-item"><h3>データサイエンス</h3></div>
+                    <div class="feature-item"><h3>最新AIツール活用</h3></div>
+                    <div class="feature-item"><h3>ポートフォリオ制作</h3></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="merits" style="background-color: var(--white-color);">
+            <div class="container">
+                <h2>参加する3つのメリット</h2>
+                <div class="features">
+                    <div class="feature-item">
+                        <h3>学び合える環境</h3>
+                        <p>仲間とのコードレビューや質問会で、疑問を即解決。独学の壁を乗り越えられます。</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>最新情報の共有</h3>
+                        <p>日々進化するAIの最新論文や技術トレンドを共有。常に業界の最前線にキャッチアップできます。</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>キャリアを広げる人脈</h3>
+                        <p>同じ目標を持つ仲間と繋がり、イベントや共同プロジェクトを通じてキャリアの可能性を広げます。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="target">
+            <div class="container">
+                <h2>こんな方におすすめ</h2>
+                <ul class="recommend-list">
+                    <li>AIプログラミングをこれから始めたい方</li>
+                    <li>独学で行き詰まりを感じている方</li>
+                    <li>最新技術を議論し、共に成長したい方</li>
+                    <li>ポートフォリオを作りたい学生や社会人</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="join" style="background-color: #34495e; color: var(--white-color);">
+            <div class="container">
+                <h2 style="color: var(--white-color);">さあ、AI開発の冒険を始めよう</h2>
+                <p>あなたの参加を待っています。下のボタンからDiscordサーバーに参加して、最初の挨拶をしてみましょう！</p>
+                <!-- ↓↓↓ Discordの招待リンクをここに設定してください ↓↓↓ -->
+                <a href="https://discord.gg/.ccuv6rnfpe" class="cta-button">今すぐ無料で参加する</a>
+                <!-- ↑↑↑ Discordの招待リンクをここに設定してください ↑↑↑ -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 AI Programming Community. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
