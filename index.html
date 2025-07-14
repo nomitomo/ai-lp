@@ -4,172 +4,285 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AIプログラミング学習コミュニティ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1E5631; /* Dark Green */
-            --secondary-color: #4CAF50; /* Green */
-            --background-color: #f0f4f0; /* Lighter green-tinted background */
-            --text-color: #333333;
+            --primary-color: #0a2e36;
+            --secondary-color: #28a745;
+            --accent-color: #38d39f;
+            --background-color: #f4f7f6;
+            --text-color: #333;
             --white-color: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
         }
-        body {
-            font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.8;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            background-color: var(--primary-color);
-            color: var(--white-color);
-            text-align: center;
-            padding: 60px 20px;
-        }
-        .header-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.8em;
-            font-weight: 700;
-        }
-        header p {
-            font-size: 1.2em;
-            margin-top: 10px;
-            opacity: 0.9;
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: var(--white-color);
-            padding: 15px 35px;
-            font-size: 1.2em;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            margin-top: 30px;
-            transition: background-color 0.3s, transform 0.3s;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        .cta-button:hover {
-            background-color: #45a049; /* Darker Green */
-            transform: translateY(-3px);
-        }
-        section {
-            padding: 60px 20px;
-            text-align: center;
-            border-bottom: 1px solid #dce0dc;
-        }
-        section:last-of-type {
-            border-bottom: none;
-        }
-        h2 {
-            font-size: 2.2em;
-            color: var(--primary-color);
-            margin-bottom: 40px;
-        }
-        .features {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .feature-item {
-            background-color: var(--white-color);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            width: calc(33.333% - 40px);
-            min-width: 220px;
+
+        * {
             box-sizing: border-box;
         }
-        .feature-item h3 {
-            font-size: 1.4em;
-            color: var(--secondary-color);
-            margin-top: 0;
+
+        body {
+            font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+            margin: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white-color);
+            background: url('header-image.jpg') no-repeat center center/cover;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 46, 54, 0.7);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 0 0 15px;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px var(--shadow-color);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+            color: var(--white-color);
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 20px rgba(40, 167, 69, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.6);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary-color);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white-color);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .card .icon {
+            height: 60px;
+            width: 60px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        #target {
+            background-color: var(--white-color);
+        }
+
         .recommend-list {
             list-style: none;
             padding: 0;
             display: inline-block;
             text-align: left;
+            max-width: 500px;
+            margin: 0 auto;
         }
+
         .recommend-list li {
-            background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%234CAF50"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>') no-repeat left center;
-            background-size: 24px;
-            padding-left: 35px;
-            margin-bottom: 15px;
-            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
         }
-        footer {
-            background-color: var(--primary-color);
+
+        .recommend-list .icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+            color: var(--secondary-color);
+        }
+
+        #join {
+            background: var(--primary-color);
             color: var(--white-color);
             text-align: center;
-            padding: 20px;
-            font-size: 0.9em;
         }
+
+        #join .section-title, #join .section-title::after {
+            color: var(--white-color);
+            background: var(--white-color);
+        }
+
+        #join p {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background-color: #061a1f;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .scroll-animate {
+            opacity: 0;
+            transition: opacity 0.8s, transform 0.8s;
+            transform: translateY(30px);
+        }
+
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.2em;
-            }
-            .feature-item {
-                width: 100%;
-            }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            .section-title { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <img src="header-image.jpg" alt="AI Community" class="header-image">
+    <header class="hero">
+        <div class="hero-content">
             <h1>AI開発の仲間と、次のレベルへ。</h1>
             <p>初心者から経験者まで歓迎。AIプログラミングを共に学ぶ、実践的コミュニティ。</p>
-            <!-- ↓↓↓ Discordの招待リンクをここに設定してください ↓↓↓ -->
             <a href="https://discord.gg/.ccuv6rnfpe" class="cta-button">Discordでコミュニティに参加</a>
-            <!-- ↑↑↑ Discordの招待リンクをここに設定してください ↑↑↑ -->
         </div>
     </header>
 
     <main>
         <section id="about">
             <div class="container">
-                <h2>このコミュニティで学べること</h2>
-                <p>最新のAI技術トレンドから、実践的なプログラミングスキルまで。仲間と共に学び、成長できる環境がここにあります。</p>
-                <div class="features">
-                    <div class="feature-item"><h3>Python基礎</h3></div>
-                    <div class="feature-item"><h3>機械学習</h3></div>
-                    <div class="feature-item"><h3>ディープラーニング</h3></div>
-                    <div class="feature-item"><h3>データサイエンス</h3></div>
-                    <div class="feature-item"><h3>最新AIツール活用</h3></div>
-                    <div class="feature-item"><h3>ポートフォリオ制作</h3></div>
+                <h2 class="section-title scroll-animate">What You'll Learn</h2>
+                <div class="grid">
+                    <div class="card scroll-animate" style="transition-delay: 100ms;">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l-4 4-4-4 4-4"/></svg>
+                        <h3>Python基礎</h3>
+                        <p>データ分析からWeb開発まで、AIの基本となるPythonの文法と使い方をマスターします。</p>
+                    </div>
+                    <div class="card scroll-animate" style="transition-delay: 200ms;">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        <h3>機械学習</h3>
+                        <p>回帰、分類、クラスタリングなど、主要な機械学習アルゴリズムの理論と実装を学びます。</p>
+                    </div>
+                    <div class="card scroll-animate" style="transition-delay: 300ms;">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                        <h3>ディープラーニング</h3>
+                        <p>画像認識や自然言語処理の核心技術である、ニューラルネットワークの構築と応用を実践します。</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="merits" style="background-color: var(--white-color);">
             <div class="container">
-                <h2>参加する3つのメリット</h2>
-                <div class="features">
-                    <div class="feature-item">
+                <h2 class="section-title scroll-animate">Why Join Us?</h2>
+                <div class="grid">
+                    <div class="card scroll-animate" style="transition-delay: 100ms;">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
                         <h3>学び合える環境</h3>
                         <p>仲間とのコードレビューや質問会で、疑問を即解決。独学の壁を乗り越えられます。</p>
                     </div>
-                    <div class="feature-item">
+                    <div class="card scroll-animate" style="transition-delay: 200ms;">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                         <h3>最新情報の共有</h3>
                         <p>日々進化するAIの最新論文や技術トレンドを共有。常に業界の最前線にキャッチアップできます。</p>
                     </div>
-                    <div class="feature-item">
+                    <div class="card scroll-animate" style="transition-delay: 300ms;">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                         <h3>キャリアを広げる人脈</h3>
                         <p>同じ目標を持つ仲間と繋がり、イベントや共同プロジェクトを通じてキャリアの可能性を広げます。</p>
                     </div>
@@ -179,23 +292,33 @@
 
         <section id="target">
             <div class="container">
-                <h2>こんな方におすすめ</h2>
-                <ul class="recommend-list">
-                    <li>AIプログラミングをこれから始めたい方</li>
-                    <li>独学で行き詰まりを感じている方</li>
-                    <li>最新技術を議論し、共に成長したい方</li>
-                    <li>ポートフォリオを作りたい学生や社会人</li>
+                <h2 class="section-title scroll-animate">こんな方におすすめ</h2>
+                <ul class="recommend-list scroll-animate">
+                    <li>
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                        <span>AIプログラミングをこれから始めたい方</span>
+                    </li>
+                    <li>
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                        <span>独学で行き詰まりを感じている方</span>
+                    </li>
+                    <li>
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                        <span>最新技術を議論し、共に成長したい方</span>
+                    </li>
+                    <li>
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                        <span>ポートフォリオを作りたい学生や社会人</span>
+                    </li>
                 </ul>
             </div>
         </section>
 
-        <section id="join" style="background-color: #34495e; color: var(--white-color);">
-            <div class="container">
-                <h2 style="color: var(--white-color);">さあ、AI開発の冒険を始めよう</h2>
+        <section id="join">
+            <div class="container scroll-animate">
+                <h2 class="section-title">さあ、AI開発の冒険を始めよう</h2>
                 <p>あなたの参加を待っています。下のボタンからDiscordサーバーに参加して、最初の挨拶をしてみましょう！</p>
-                <!-- ↓↓↓ Discordの招待リンクをここに設定してください ↓↓↓ -->
                 <a href="https://discord.gg/.ccuv6rnfpe" class="cta-button">今すぐ無料で参加する</a>
-                <!-- ↑↑↑ Discordの招待リンクをここに設定してください ↑↑↑ -->
             </div>
         </section>
     </main>
@@ -205,6 +328,24 @@
             <p>&copy; 2025 AI Programming Community. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const animatedElements = document.querySelectorAll('.scroll-animate');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        animatedElements.forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 
 </body>
 </html>
